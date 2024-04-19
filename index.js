@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();  
 const port= 3000;
-
+const cors = require('cors');
 app.use(express.json());
+app.use(cors());
 async function connectToDB() {
     try {
         await mongoose.connect("mongodb://localhost:27017/new")
